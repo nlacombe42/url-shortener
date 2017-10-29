@@ -29,11 +29,15 @@ dependencies {
 	compile 'org.flywaydb:flyway-core:4.2.0'
 	compile 'javax.inject:javax.inject:1'
 	compile 'org.slf4j:slf4j-api:1.7.25'
+	compile 'org.bouncycastle:bcprov-jdk15on:1.58'
+	compile 'org.apache.commons:commons-lang3:3.6'
 
 	runtime 'mysql:mysql-connector-java:6.0.6'
 	runtime 'ch.qos.logback:logback-classic:1.2.3'
 
 	testCompile 'junit:junit:4.12'
+	testCompile 'org.springframework.boot:spring-boot-starter-test:1.5.8.RELEASE'
+	testCompile 'org.assertj:assertj-core:3.8.0'
 }
 
 repositories {
