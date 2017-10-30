@@ -3,7 +3,7 @@
 ## Build
 Run the following to test and build the application.
     ./gradlew build
- 
+
 ## Run
 **Note**: If running on Java 9 you will have to add `--add-modules java.xml.bind` to the JVM options since the hibernate version as part of spring boot still has not updated to java9.
 
