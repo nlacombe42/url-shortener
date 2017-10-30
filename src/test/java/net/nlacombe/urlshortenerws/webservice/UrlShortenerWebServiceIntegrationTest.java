@@ -3,6 +3,7 @@ package net.nlacombe.urlshortenerws.webservice;
 import net.nlacombe.urlshortenerws.dto.ShortUrl;
 import net.nlacombe.urlshortenerws.dto.ShortUrlCreationRequest;
 import net.nlacombe.urlshortenerws.exception.RestExceptionBody;
+import net.nlacombe.urlshortenerws.test.constants.TestConstants;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,7 +22,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UrlShortenerWebServiceIntegrationTest
 {
-	private static final String CLIP_ABSOLUTE_URL = "http://cl.ip/";
 	private static final URI SHORTEN_URL_ENDPOINT_URI = URI.create("/short-urls/");
 	private static final String REDIRECT_ENDPOINT_URL = "/r/";
 
@@ -36,13 +36,13 @@ public class UrlShortenerWebServiceIntegrationTest
 		ShortUrl shortUrl = restTemplate.postForObject(SHORTEN_URL_ENDPOINT_URI, shortUrlCreationRequest, ShortUrl.class);
 
 		assertThat(shortUrl).isNotNull();
-		assertThat(shortUrl.getShortUrl()).startsWith(CLIP_ABSOLUTE_URL);
+		assertThat(shortUrl.getShortUrl()).startsWith(TestConstants.CLIP_ABSOLUTE_URL);
 	}
 
 	@Test
 	public void short_url_max_absolute_path_of_11_characters()
 	{
-		int absoluteUrlMaxLength = CLIP_ABSOLUTE_URL.length() + 10;
+		int absoluteUrlMaxLength = TestConstants.CLIP_ABSOLUTE_URL.length() + 10;
 		ShortUrlCreationRequest shortUrlCreationRequest = new ShortUrlCreationRequest("https://nlacombe.net/");
 
 		ShortUrl shortUrl = restTemplate.postForObject(SHORTEN_URL_ENDPOINT_URI, shortUrlCreationRequest, ShortUrl.class);

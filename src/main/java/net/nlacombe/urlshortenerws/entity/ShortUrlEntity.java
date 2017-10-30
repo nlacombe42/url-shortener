@@ -17,6 +17,16 @@ public class ShortUrlEntity
 	private String shortUrlPath;
 	private String longUrl;
 
+	public ShortUrlEntity()
+	{
+	}
+
+	public ShortUrlEntity(String shortUrlPath, String longUrl)
+	{
+		this.shortUrlPath = shortUrlPath;
+		this.longUrl = longUrl;
+	}
+
 	public int getShortUrlId()
 	{
 		return shortUrlId;

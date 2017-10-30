@@ -39,11 +39,7 @@ public class DefaultUrlShortenerService implements UrlShortenerService
 		{
 			String shortUrlPath = getShortUrlPath(longUrl);
 
-			shortUrlEntity = new ShortUrlEntity();
-			shortUrlEntity.setLongUrl(longUrl);
-			shortUrlEntity.setShortUrlPath(shortUrlPath);
-
-			shortUrlEntity = shortUrlRepository.save(shortUrlEntity);
+			shortUrlEntity = shortUrlRepository.save(new ShortUrlEntity(shortUrlPath, longUrl));
 		}
 
 		return shortUrlMapper.mapToDto(shortUrlEntity);
