@@ -2,6 +2,7 @@
 
 ## Build
 Run the following to test and build the application.
+
     ./gradlew build
 
 ## Run
