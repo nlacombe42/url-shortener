@@ -14,6 +14,5 @@ Run the following to test and build the application.
 ### Run with docker
 - Update src/main/resources/application.properties:2 to point to an external MySQL DB.
 - Make sure you have docker installed locally.
-- Then execute the following:
-    ./gradlew buildDockerImage
-    docker run -dp "8001:8001" url-shortener:1.0.0
+- Execute `./gradlew buildDockerImage` to build the docker image.
+- Execute `docker run -dp "8001:8001" url-shortener:1.0.0` to run the application.
